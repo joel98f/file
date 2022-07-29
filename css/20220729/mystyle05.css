@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+/* mystyle05.css */
+/* 참조 05_다양한selector.html */
+/* 참조 https://www.w3schools.com/cssref/css_selectors.asp */
+
+p{ /* 모든 <p> 요소 */
+font-family: 궁서체; font-size: 40px; font-style: italic; font-weight: bold;
+}
+
+div p{background-color: red;}/*<div>안에 있는 모든 <p>*/
+
+h2, p{color:blue} /*모든 <h2> 모든 <p>*/
+
+/* 개나리 그림자 넣기 */
+div h2{
+    text-shadow: 2px 2px green;
+}
+
+/* 참조 https://www.w3schools.com/css/css_boxmodel.asp */
+#mybox{/*Box Model*/
+    width: 320px;
+    padding: 10px; /*내용의 안쪽 여백을 상하좌우 모두 10px*/ 
+    border:5px solid #000;
+    margin:auto;
+}
+
+/* 부모>자식 */
+
+div > span > p {
+    text-decoration-line: line-through ;
+    text-decoration-color: yellow;
+} 
+
+/* 해바라기 */
+div > span > h2{
+    color:bisque
+}
+
+#menu{
+    width: 100px;
+    height: 100px;
+    background: gray;
+}
+
+.hide{
+    width:0;
+    height: 0;
+    margin:0;
+    padding:0;
+    font-size: 0;
+}
+
+
