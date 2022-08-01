@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko"><!--HTML 시작-->
+    <head><!--머릿말-->
+        <title>11_fixed.html</title>
+        <link rel="stylesheet" href="../reset.css">
+        <style>
+            /* 
+                absolute 문서영역 기준 (일단은 body 영역을 기준)
+                fixed 화면영역 기준 (브라우저를 기준으로) 예) 위로, 아래로, 퀵메뉴 등
+            */
+            /* 1) */
+            #s1 ul{background: yellow;}
+            #s1 li:nth-child(1){background: red;}
+            #s1 li:nth-child(2){background: green; --position:absolute; --position:relative; position: fixed; left:100px; top:100px}
+            #s1 li:nth-child(3){background: blue;}
+
+        </style>
+    </head>
+    <body>
+        <!-- 고정 위치 position:fixed -->
+        <section id="s1">
+            <h3>position:fixed</h3>
+            <ul>
+                <li>개나리</li>
+                <li>진달래</li>
+                <li>라일락</li>
+            </ul>
+        </section>
+        <p>Korea</p>
+        <p>Korea</p>
+        <p>Korea</p>
+        <p>Korea</p>
+        <p>Korea</p>
+        <p>Korea</p>
+        <p>Korea</p>
+        <p>Korea</p>
+        <p>Korea</p>
+        <p>Korea</p>
+        <p>Korea</p>
+        <p>Korea</p>
+        <p>Korea</p>
+        <p>Korea</p>
+        <p>Korea</p>
+        
+    </body>
+</html><!--HTML 끝-->

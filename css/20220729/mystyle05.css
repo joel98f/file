@@ -70,3 +70,15 @@ div > span > h2{
 #nav > ol > li:nth-child(2){font-weight: bold;} /*요소 중에서 2번째*/
 #mav > ol > li > a{width: 200px; height: 100px; background-color: hotpink; text-decoration-style: wavy ;}
 
+/*
+   참조 https://www.w3schools.com/cssref/sel_active.asp
+   a:link     - 일반적 링크 및 방문하지 않은 링크
+   a:visited  - 방문했던 링크
+   a:hover    - 마우스 올렸을 때 링크
+   a:active   - 마우스 누르는 순간의 링크
+*/
+
+a:link {color:#000; text-decoration: none;}
+a:visited {color:#000; text-decoration: none;}
+a:hover {color:#000; text-decoration: underline;}
+a:active {color:#000; text-decoration: none;}
