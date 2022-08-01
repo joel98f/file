@@ -9,10 +9,18 @@
                 fixed 화면영역 기준 (브라우저를 기준으로) 예) 위로, 아래로, 퀵메뉴 등
             */
             /* 1) */
+            /* 
             #s1 ul{background: yellow;}
             #s1 li:nth-child(1){background: red;}
             #s1 li:nth-child(2){background: green; --position:absolute; --position:relative; position: fixed; left:100px; top:100px}
-            #s1 li:nth-child(3){background: blue;}
+            #s1 li:nth-child(3){background: blue;} 
+            */
+
+            /* 2) 화면 하단에 고정*/
+            #s1 ul{background: yellow; position: relative; height: 300px;}
+            #s1 li:nth-child(1){background: red;}
+            #s1 li:nth-child(2){background: green; position: fixed; bottom:0px; height: 80px; width:100%}
+            #s1 li:nth-child(3){background: blue;} 
 
         </style>
     </head>

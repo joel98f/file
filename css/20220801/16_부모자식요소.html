@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko"><!--HTML 시작-->
+    <head><!--머릿말-->
+        <title>16_부모자식요소.html</title>
+        <link rel="stylesheet" href="../reset.css">
+        <style>
+            body{margin:0;}
+            .parent{
+                width: 600px;
+                height:300px;
+                background-color: gold;
+                margin: 150px;
+                position: relative;
+            }
+            .child{
+                width: 100px;
+                height: 50px;
+                background-color: gray;
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+            }
+        </style>
+
+    </head>
+    <body>
+        부모요소 : relative / 자식요소 : absolute
+        <hr>
+
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+    </body>
+</html><!--HTML 끝-->
