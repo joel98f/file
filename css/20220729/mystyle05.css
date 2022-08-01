@@ -58,4 +58,15 @@ div > span > h2{
     margin:auto;
 }
 
+#nav > ul{ 
+    list-style: none;
+}
+#nav > .news >{
+    background: olive;
+    font-weight: bold;
+}
+
+/* 태그의 상세 속성 접근 */
+#nav > ol > li:nth-child(2){font-weight: bold;} /*요소 중에서 2번째*/
+#mav > ol > li > a{width: 200px; height: 100px; background-color: hotpink; text-decoration-style: wavy ;}
 
