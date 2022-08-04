@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko"><!--HTML 시작-->
+    <head><!--머릿말-->
+        <meta charset="UTF-8">
+        <title>05_if.html</title>
+    </head>
+    <body>
+
+        <h3>if조건문</h3>
+        <script>
+            /*
+                ● 제어문
+                  - 프로그램의 흐름을 제어
+                  - 조건문 : if문, switch~case문
+                  - 반복문 : for문 while문, do~while문
+                  - break문
+                  - continue문
+
+                  if 조건문 (boolean값으로 판단)
+                  1) if (조건){ 조건이 true이면 처리}
+
+                  2) if (조건){조건이 true이면 처리}
+                     else{ 조건이 false이면 처리}
+                  
+                  3) if(조건){조건이 true이면 처리}
+                     else if(조건2){조건2이 true이면 처리}
+                     else if(조건3){조건3이 true이면 처리}
+                     else{조건1, 2, 3까지 만족하지 않으면 무조건 처리}
+                */
+
+                //성적 프로그램
+                let name="";
+                let kor =100, eng = 100, mat = 55;
+
+                let total =kor + eng + mat;     //총점 구하시오
+                let aver = parseInt(total/3);   //평균 구하시오
+
+                document.write("이름 : " + name + "<hr>");
+                document.write("국어 : " + kor + "<hr>");
+                document.write("영어 : " + eng + "<hr>");
+                document.write("수학 : " + mat + "<hr>");
+                document.write("총점 : " + total + "<hr>");
+                document.write("평균 : " + aver + "<hr>");
+
+               //문1) 평균 95점이상이면 장학생을 출력하시오
+               if(aver >= 95){
+                document.write("<span style='color:red; font-weight:bold'>장학생</span><hr>");
+                }//if end
+
+
+               //문2) 국어점수가 70점이상이면 합격, 아니면 불합격
+
+               if(kor >= 70){
+                document.write("국어 : 합격 <hr>");
+               }else{
+                document.write("국어 : 불합격 <hr>");
+               }//if end
+
+
+               //문3) 수학점수가 90점이상이면 "A"
+               //               80점이상이면 "B"
+               //               70점이상이면 "C"
+               //               60점이상이면 "D" 
+               //               나머지는 "F"
+
+               if(mat >= 90){
+                document.write("A");
+               }else if(mat >= 80){
+                document.write("B")
+               }else if(mat >= 70){
+                document.write("C")
+               }else if(mat >= 60){
+                document.write("D")
+               }else{
+                document.write("F")
+               }
+               document.write("<hr>")
+               //문4) 과락
+               //   평균이 70점 이상이면 결과 : 합격
+               //   (단, 국역수 세과목 중에서 한과목이라도 40점 미만이면 결과 : 재시험)
+               //   평균이 70점 미만이면 결과 : 불합격
+
+
+            //    if(aver >= 70 && kor >= 70 && eng >= 70 && mat >= 70){
+            //         document.write("합격");
+            //     }else if(aver < 70 && kor <= 70 && eng <= 70 && mat <= 70){
+            //         document.write("불합격");
+            //     }else if(kor < 70 || eng < 70 || mat < 70){
+            //         document.write("재시험");
+            //     }
+
+
+                //1) OR 조건
+                if(aver >=70){
+                    if(kor < 40 || eng < 40 || mat < 40){
+                        document.write("결과 : 합격 <hr>");
+                    }else{
+                        document.write("결과 : 재시험 <hr>");
+                    }
+                }else{
+                    document.write("결과 : 탈락 <hr>");
+                }//if end
+
+                //2) 3과목 전부다 40점이 넘으면 합격
+                if(aver >=70){
+                    if(kor > 40 && eng > 40 && mat > 40){   //100 >=40 && 100 >= 40 &&35 >40
+                        document.write("합격")              //true          true       true
+                    }else{                                 //false
+                        document.write("불합격")
+                    }
+                }else{
+                    document.write("결과 : 탈락 <hr>");    
+                }//if end    
+
+
+        </script>
+    </body>
+</html>

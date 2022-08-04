@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko"><!--HTML 시작-->
+    <head><!--머릿말-->
+        <meta charset="UTF-8">
+        <title>02_지폐갯수.html</title>
+    </head>
+    <body>
+        <div id="demo">
+          
+        </div>
+
+        <script>
+            //연습) 각 지폐갯수를 구해서 표작성해서 본문 id="demo"에 출력하시오
+            
+
+            
+
+            let money = 56550;
+            parseInt(money/10000)
+            document.write("<table border=1px;><tr><td> 만원</td> <td>"+parseInt(money/10000)+ "장</td><tr>");
+            money= money % 10000;
+            document.write("<tr><td> 천원</td> <td>"+parseInt(money/1000)+ "장</td><tr>");
+            money= money % 1000;
+            document.write("<tr><td> 백원</td> <td>"+parseInt(money/100)+ "개</td><tr>");
+            money= money % 100;
+            document.write("<tr><td> 십원</td> <td>"+parseInt(money/10)+ "개 </td><tr><table>");
+
+        
+        /*
+        let money = 53550;
+        let money1= money % 10000;
+        let money2= money % 1000;
+        let money3= money % 100;
+        
+        document.getElementById("demo").innerHTML="<table border=1px;><tr><td> 만원</td> <td>"+parseInt(money/10000)+ "장</td></tr><tr><td> 천원</td> <td>"+parseInt(money1/1000)+ "장</td></tr><tr><td> 천원</td> <td>"+parseInt(money2/100)+ "개</td></tr><tr><td> 십원</td> <td>"+parseInt(money3/10)+ "개 </td><tr><table>"
+        */
+            
+
+
+        </script>
+    </body>
+</html>
