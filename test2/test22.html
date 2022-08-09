@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko"><!--HTML 시작-->
+    <head><!--머릿말-->
+        <meta charset="UTF-8">
+        <title>blank.html</title>
+    </head>
+    <body>
+        
+        <script>
+            let arr = [52,273,103,32,57,103,31,2]
+            let get = 0;
+            let get2 = 0;
+            for(let i= 0; i<arr.length;i++){
+                if(get < arr[i]){
+                    get = arr[i]
+                    
+                }else if(get2 > arr[i]){
+                    get2 = arr[i]
+                    
+                }
+                
+            }
+            document.write(get);
+            document.write("<Br>");
+            document.write(get2);
+
+        </script>
+    </body>
+</html>

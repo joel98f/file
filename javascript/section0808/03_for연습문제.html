@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko"><!--HTML 시작-->
+    <head><!--머릿말-->
+        <meta charset="UTF-8">
+        <title>03_for연습문제.html</title>
+    </head>
+    <body>
+        
+        <script>
+            
+
+
+        //문1) 아래와 같이 출력하시오
+        /*
+       12345
+       23456
+       34567
+       45678
+       56789
+        */
+
+        for(let i =0; i<5;i++){
+            for(let j= 1; j<=5; j++){
+                document.write(i+j)
+            }
+            document.write("<br>");
+        }
+        document.write("<hr>");
+        //문2)아래 그림과 같이 출력하시오
+        /*
+        @★★★
+        ★@★★
+        ★★@★
+        ★★★@            
+        */
+        for(i=1; i<=4; i++) {               
+            for (j=1; j<=4; j++) {
+               
+                if(j==i){
+                    
+                    document.write("@");
+                    
+                }else if(j!=i){
+                    document.write("★")
+                }
+               
+                    
+            }document.write("<Br>")
+                
+
+                
+            }
+        //문3) 아래와 같이 누적의 합을 출력하시오 (회전수 증가)
+        /*
+        1+ ... +10=55
+        1+ ... +20=210
+        1+ ... +30=465
+        
+        1+ ... +90=
+        1+ ... +100=5050            
+        */
+       let sum=0;
+        for(let i =10; i<=100; i=i+10){
+            for(let j=1; j<=i; j++){
+                
+                sum=sum+j;
+            }
+            document.write("1+...+"+i+"="+sum);
+            document.write("<br>")
+            sum=0; //초기화
+        }
+        document.write("<hr>")
+
+        let even = 0;
+        let odd = 0;
+
+        //문4) 1~100사이 중에서 짝수의 합, 홀수의 합을 각각 구하시오
+       /*1)
+        for(let i=0; i<=100; i++){
+            if(i%2==0){
+                even = even + i             
+            }else{odd = odd + i }
+        }
+        */
+
+        //2)
+        let flag =false;
+
+        for(let a=1; a<=100; a=a+1){
+            if(flag){
+                even = even+i;
+                flag=false;
+            }else{
+                odd=odd+a;
+                flag=true;
+            }
+        }
+        /*
+            a=1 1<=100
+                    if(false)
+                    else{flag = true}
+                2<=100
+                    if(true){flag= false}
+                3<=100
+                    if(false)
+                    else{flag=true}
+                4<=100
+                if(true){flag=false}
+        */
+
+
+        document.write(even);
+        document.write("<br>");
+        document.write(odd);
+        document.write("<hr>");
+
+        //문제 5) 다음식의 결과를 구하시오
+        //1 - 2+ 3- 4 + 5 ... 100 = ?
+
+        let num = 0;
+
+        for(let i=0; i<=100; i++){
+            if(i%2==1){
+                num = num + i             
+            }else{num = num - i }
+        }
+        document.write(num);
+        document.write("<hr>");
+
+        //문제 6) 2g, 3g, 5g 짜리 수가 각가 5개씩 있을때,
+        //      세가지의 수의 조합으로 무게가 40~45사이일 때
+        //      각 추의 갯수와 무게를 출력하는 프로그램
+        /*
+                출력결과
+                2g  3g  5g  total
+                1   5   5   42
+                2   4   5   41
+                2   5   5   44
+        */
+        
+        // let fi = 0;
+        // let se = 0;
+        // let th = 0;
+        // let total = 0;
+        //     for(fi = 0; fi<=5; fi++){     //각 그램의 5개씩 부여
+        //         for(se=0; se<=5; se++){
+        //             for(th=0; th<=5; th++){
+        //                 total = (fi*5) + (se*3) + (th*2);    //그램 수 지정
+        //                 if(40 <= total && total <= 45){     //40~45 
+        //                     document.write(fi+" " +se +" " + th+" " + total);
+        //                     document.write("<br>");
+        //                 }
+        //             }
+        //         }
+        //     }
+       
+        let a = 0, b=0, c=0, total = 0;
+        
+        for(a = 0; a<=5; a++){
+            for(b=0; b<=5; b++){
+                for(c=0; c<=5; c++){
+                    total = (a*2) + (b*3) + (c*5);
+                    if(total >= 40 && total <= 45){
+                        document.write(a+" " + b+ " " + c + " " + "= " +total);
+                        document.write("<br>");
+                    }
+                }
+            }
+        }
+        
+        </script>
+    </body>
+</html>
