@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko"><!--HTML 시작-->
+    <head><!--머릿말-->
+        <meta charset="UTF-8">
+        <title>01_배열.html</title>
+    </head>
+    <body>
+        <h3>배열 Array</h3>
+        <script>
+            
+
+            let kor = []; // 배열 선언(자바보다 자바스크립트가 더 유연)
+
+            kor[0] = 10;  // 배열 요소의 인덱스는 0부터 시작한다
+            kor[1] = 20;  // 배열 요소의 인덱스는 1씩 증가한다
+            kor[2] = 30;  
+
+            document.write(kor[0]);
+            document.write(kor[1]);
+            document.write(kor[2]);
+            document.write("<hr>");
+
+            let names = [];
+            names[0] = "무궁화";
+            names[1] = "개나리";
+            names[2] = "진달래";
+
+            document.write(names[0]);
+            document.write(names[1]);
+            document.write(names[2]);
+            document.write("<hr>");
+
+            //배열선언
+            // let points = [] // Good
+            // let points=new Array(); // Bad
+
+            //배열 선언 및 초기화
+            let points = [40,100,25,3,7];
+            document.write(points[0]); //40
+            document.write(points[1]); //100
+            document.write(points[2]); //25
+            document.write(points[3]); //3
+            document.write(points[4]); //7
+            document.write("<hr>");
+
+            document.write(points.length);//5
+            document.write("<hr>");
+            document.write(points);//40,100,25,3,7
+            document.write("<hr>");
+
+            for(let i = 0; i< points.length; i++){//여러개 표현
+                document.write(points[i]+"<br>");
+            }
+            
+            document.write("<hr>");
+
+            let fruits = ["Banana","Orange","Apple","Mango"];
+            fruits[6] = "Lemon"
+            document.write(fruits.length); //최종 갯수에 길이 7
+            document.write(fruits[6]);  //Lemon
+            document.write(fruits[4]);  //undefined
+            document.write(fruits[5]);  //undefined
+
+            fruits[8] = "kwiwi";
+            document.write(fruits.length);  // 배열 요소 갯수 9
+
+            
+
+
+
+        </script>
+    </body>
+</html>
