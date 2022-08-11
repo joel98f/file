@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko"><!--HTML 시작-->
+    <head><!--머릿말-->
+        <meta charset="UTF-8">
+        <title>05_디지털시계.html</title>
+    </head>
+    <body>
+        <h3>디지털시계</h3>
+        <div id="clock"></div>
+        <hr>
+        <input type="button" value="시작" onclick="showtime()">
+        <input type="button" value="중지" onclick="killtime()">
+        <script>
+            function showtime(){
+                const d = new Date();
+
+                let today = "";
+                
+                //연도
+                today += d.getFullYear()+"."; //2022
+
+                //달
+                if(d.getMonth()+1<10){
+                    today+= "0";
+                }
+                today+= d.getMonth()+1+"."//2022.08
+
+                //일
+                if(d.getDate()< 10){
+                    today+="0"
+                }
+                today+= d.getDate();
+
+                //요일
+                const days=["일","월","화","수","목","금","토"]
+                today += " ("+(days[d.getDay()])+") ";   
+
+                //AM,PM
+                if(d.getHours()< 12){
+                    today += "AM"
+                }
+                    today += "PM"
+
+                
+                //시간
+                if(d.getHours()< 13){
+
+                    today += d.getHours() + ":";
+                }
+                    today += d.getHours()-12 + ":";
+                
+                //분
+                if(d.getMinutes()< 10){
+                    today += "0"
+                }
+                today += d.getMinutes()+"분"
+                
+                //초
+                if(d.getSeconds()< 10){
+                    today += "0"
+                }
+                today += d.getSeconds()+"초"
+
+                document.getElementById("clock").innerHTML=today
+
+                
+                timer = setTimeout(showtime, 1000);// 1초후에 showtime 함수 호출
+                
+            }
+
+            let timer; //
+
+            function killtime(){
+                clearTimeout(timer, 0); //함수, 변수 둘다 가능
+            }
+           
+        </script>
+    </body>
+</html>
