@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko"><!--HTML 시작-->
+    <head><!--머릿말-->
+        <meta charset="UTF-8">
+        <title>03_Date객체.html</title>
+    </head>
+    <body>
+        
+        <h3>Date객체</h3>
+        현재날짜 <div id="clock">
+
+
+        </div>
+
+        <script>
+            // https://www.w3schools.com/js/js_dates.asp
+            //Date 날짜 관련 내장 객체
+
+            const d = new Date(); // 시스템의 현재 날짜 정보 가져오기
+
+            /*
+            document.write(d.getFullYear());
+            document.write("<br>");
+            document.write(d.getMonth()+1);
+            document.write("<br>");          
+            document.write(d.getDate());
+            document.write("<br>");
+            document.write(d.getHours());
+            document.write("<br>");
+            document.write(d.getMinutes());
+            document.write("<br>");
+            document.write(d.getSeconds());
+            document.write("<br>");
+            const days=["일","월","화","수","목","금","토"]
+
+            document.write(days[d.getDay()]);
+            document.write("<br>");
+            */
+            //문) d값을 이용해서 날짜 정보를 아래와 같이 구성해서 id=clock에 출력하시오
+            //2022.08.10 (수)
+            let today = "";
+            let date = 0;
+            today += d.getFullYear()+"."; //2022
+            
+            //month 구하기
+
+            // today += ("0"+d.getMonth()).slice(-2)+"."; 
+
+            // if(d.getMonth()<10){
+            //     today += "0"+(d.getMonth()+1)+"."
+            // }else{
+            //     today += (d.getMonth()+1)+"."
+            // }
+
+            if(d.getMonth()+1<10){
+                today+= "0";
+            }
+            today+= d.getMonth()+1+"."//2022.08
+
+            //date
+
+            // if(d.getDate()< 10){
+            //     today += "0"+(d.getDate()+1)
+            // }else{
+            //     today += d.getDate()+1
+            // }
+            if(d.getDate()< 10){
+                today+="0"
+            }
+            today+= d.getDate();
+
+            //요일
+            const days=["일","월","화","수","목","금","토"]
+            today += " ("+(days[d.getDay()])+") ";   
+
+            //AM,PM
+            if(d.getHours()< 12){
+                today += "AM"
+            }
+                today += "PM"
+
+            
+            //시간
+            if(d.getHours()< 13){
+
+                today += d.getHours() + ":";
+            }
+                today += d.getHours()-12 + ":";
+            
+            //분
+            if(d.getMinutes()< 10){
+                today += "0"
+            }
+            today += d.getMinutes()+"분"
+            
+
+            if(d.getSeconds()< 10){
+                today += "0"
+            }
+            today += d.getSeconds()+"초"
+            
+
+
+            
+
+
+            document.getElementById("clock").innerHTML=today
+
+        </script>
+    </body>
+</html>
