@@ -4,21 +4,24 @@ function hap(a,b){  //두수 사이의 합을 반환하시오
     //2+3+4+5
     //5+4+3+2
     let num=0;
-    for(let i = a; i<=5; i++){
+    // for(let i = a; i<=5; i++){
     
-        num = i+num; 
+    //     num = i+num; 
+    // }
+    //return num;
+    if(a>b){// 숫자가 클 시 자리 바꿈
+        let tmp = a ; a=b; b=tmp;
     }
-    return num;
+    let sum=0;
+    for(let n=a; n<=b; n++){
+        sum+=n;
+    }
+    return sum;
 }
 
 
 function diff(a,b){ // 두수사이의 차이를 반환하시오 (절대값)
-    let num=0;
-    num = a-b;
-    if(0 > num){
-        num = -num;
-    }
-    return num;
+    return Math.abs(a-b); //무조건 -삭제
     
     
     //2,5 //3
