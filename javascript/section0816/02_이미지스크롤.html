@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko"><!--HTML 시작-->
+    <head><!--머릿말-->
+        <meta charset="UTF-8">
+        <title>02_이미지스크롤.html</title>
+        <style>
+            #mydiv{position: relative; top:10px; left:100px; width: 800px; height:100px; background-color: hotpink;}
+            
+        </style>
+        <script>
+            //1) 스크롤 하고자 하는 이미지를 전역변수에 저장
+            let ctnt = [];//배열 선언
+            ctnt[0] = "<img src='../../images/angel.png' width='85'>";
+            ctnt[1] = "<img src='../../images/smile.png' width='85'>";
+            ctnt[2] = "<img src='../../images/angel.png' width='85'>";
+            ctnt[3] = "<img src='../../images/smile.png' width='85'>";
+            ctnt[4] = "<img src='../../images/angel.png' width='85'>";
+            ctnt[5] = "<img src='../../images/smile.png' width='85'>";
+            ctnt[6] = "<img src='../../images/angel.png' width='85'>";
+            ctnt[7] = "<img src='../../images/smile.png' width='85'>";
+
+            //2) 1)에서 준비한 이미지 id=mydiv에 배치하기
+            function start(){
+
+                for(let i = 0; i< ctnt.length;i++){
+                    document.write("<div id='area"+i+"' style='position:absolute; top:0; left:"+i*90+"px;'>");
+                    document.write(ctnt[i]);
+                    document.write("</div>");
+                }
+
+            }
+            setTimeout(scroll,1000); //scroll 함수 시작
+            //3) 3초 후에 scroll함수 1번 호출
+            function scroll(){
+                // alert("scroll함수 호출")
+                //alert(document.getElementById("area0")); //[object HTMLDivElement]
+                //alert(document.getElementById("area0").style.left); //0px
+                
+                //5) id=area0의 스타일을 가져와서 왼쪽여백값을 -10px 줄이기
+
+                //이미지 8장을 동시에
+                // for(let i = 0; i< ctnt.length;i++){
+                //     let tmp = document.getElementById("area"+i).style;
+                // tmp.left = parseInt(tmp.left)-10+"px";
+                // }
+
+                for(let i = 0; i< ctnt.length;i++){
+                    
+                    let tmp = document.getElementById("area"+i).style;
+                   
+                    tmp.left = parseInt(tmp.left)-10+"px";
+                    
+                    if(parseInt(tmp.left) < -90){
+                        tmp.left =parseInt(tmp.left)+720+"px"
+                    }
+                }
+                
+                //6) 0.5초 후에 scroll합수 호출
+                setTimeout(scroll,500);
+
+              
+            }   
+        </script>
+    </head>
+    <body>
+        <h3>이미지스크롤</h3>
+
+        <!-- 이미지가 스크롤 되는 위치 -->
+        <div id="mydiv">
+            <script> start(); </script>
+        </div>
+    </body>
+</html>
