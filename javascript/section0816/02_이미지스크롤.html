@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>02_이미지스크롤.html</title>
         <style>
-            #mydiv{position: relative; top:10px; left:100px; width: 800px; height:100px; background-color: hotpink;}
+            #mydiv{position: relative; top:10px; left:100px; /*8)*/ width: 285px; /*9)가로 영역크기 줄이기*/ height:100px; background-color: #fff; overflow: hidden;}
             
         </style>
         <script>
@@ -50,8 +50,9 @@
                    
                     tmp.left = parseInt(tmp.left)-10+"px";
                     
-                    if(parseInt(tmp.left) < -90){
-                        tmp.left =parseInt(tmp.left)+720+"px"
+                    if(parseInt(tmp.left) < -90){//px단위 제거
+                        //tmp.left =parseInt(tmp.left)+720+"px"
+                        tmp.left = (ctnt.length-1)*90 + "px";
                     }
                 }
                 
@@ -60,9 +61,18 @@
 
               
             }   
+
+            //13) 6)의 시간을 해제
+            let timer; //전역변수
+
+            function killtime(){
+            
+                clearTimeout(timer);
+                
+            }//killtime() end
         </script>
     </head>
-    <body>
+    <body onunload="killtime()">
         <h3>이미지스크롤</h3>
 
         <!-- 이미지가 스크롤 되는 위치 -->
